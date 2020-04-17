@@ -11,7 +11,7 @@
     
     <tag>
         <name>transform</name>
-        <tag-class>nl.tfe.focuspoints.client.taglib.ImageTransformationTag</tag-class>
+        <tag-class>io.focuspoints.client.taglib.ImageTransformationTag</tag-class>
         <body-content>empty</body-content>
         <attribute>
             <name>var</name>
@@ -61,7 +61,7 @@
     
     <tag>
         <name>resize</name>
-        <tag-class>nl.tfe.focuspoints.client.taglib.ImageResizeTag</tag-class>
+        <tag-class>io.focuspoints.client.taglib.ImageResizeTag</tag-class>
         <body-content>empty</body-content>
         <attribute>
             <name>var</name>
