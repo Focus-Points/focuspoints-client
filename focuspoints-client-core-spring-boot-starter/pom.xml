@@ -13,6 +13,9 @@
 	
 	<artifactId>focuspoints-client-core-spring-boot-starter</artifactId>
 	
+	<name>FocusPoints Client Spring Boot Starter</name>
+	<description>FocusPoints Client Spring Boot Starter</description>
+	
 	<dependencies>
 		<dependency>
 			<groupId>io.focuspoints</groupId>

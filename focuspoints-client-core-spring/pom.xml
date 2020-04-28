@@ -13,6 +13,9 @@
 	
 	<artifactId>focuspoints-client-core-spring</artifactId>
 	
+	<name>FocusPoints Client Spring</name>
+	<description>FocusPoints Client Spring</description>
+	
 	<dependencies>
 		<dependency>
 			<groupId>io.focuspoints</groupId>

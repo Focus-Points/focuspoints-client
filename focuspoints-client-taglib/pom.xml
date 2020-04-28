@@ -13,6 +13,9 @@
 	
 	<artifactId>focuspoints-client-taglib</artifactId>
 
+	<name>FocusPoints Client Taglib</name>
+	<description>FocusPoints Client Taglib</description>
+
 	<dependencies>
 		<dependency>
 			<groupId>io.focuspoints</groupId>

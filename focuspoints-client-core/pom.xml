@@ -13,6 +13,9 @@
 	
 	<artifactId>focuspoints-client-core</artifactId>
 
+	<name>FocusPoints Client Core</name>
+	<description>FocusPoints Client Core</description>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.apache.commons</groupId>

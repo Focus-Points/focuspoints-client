@@ -12,7 +12,10 @@
 	</parent>
 	
 	<artifactId>focuspoints-client-thymeleaf</artifactId>
-
+	
+	<name>FocusPoints Thymeleaf</name>
+	<description>FocusPoints Thymeleaf</description>
+	
 	<dependencies>
 		<dependency>
 			<groupId>io.focuspoints</groupId>

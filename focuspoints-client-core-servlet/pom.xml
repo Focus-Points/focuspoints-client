@@ -13,6 +13,9 @@
 	
 	<artifactId>focuspoints-client-core-servlet</artifactId>
 	
+	<name>FocusPoints Client Servlet</name>
+	<description>FocusPoints Client Servlet</description>
+	
 	<dependencies>
 		<dependency>
 			<groupId>io.focuspoints</groupId>
