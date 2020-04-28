@@ -1,7 +1,5 @@
 package io.focuspoints.client;
 
-import io.focuspoints.client.TokenCreator;
-import io.focuspoints.client.UrlCreator;
 import java.util.function.Consumer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -20,8 +18,8 @@ public class FocusPointsConfiguration {
 
 		this.setPropertyIfExists("focuspoints.url", properties::setUrl);
 		this.setPropertyIfExists("focuspoints.token-request-parameter-name", properties::setTokenRequestParameterName);
-		this.setPropertyIfExists("focuspoints.username", properties::setUsername);
-		this.setPropertyIfExists("focuspoints.password", properties::setPassword);
+		this.setPropertyIfExists("focuspoints.token-id", properties::setTokenId);
+		this.setPropertyIfExists("focuspoints.token-secret", properties::setTokenSecret);
 
 		return properties;
 	}

@@ -34,8 +34,8 @@ public class FocusPointsInitalizer implements ServletContextListener {
 		
 		setPropertyIfExists(sc, "focuspoints.url", properties::setUrl);
 		setPropertyIfExists(sc, "focuspoints.token-request-parameter-name", properties::setTokenRequestParameterName);
-		setPropertyIfExists(sc, "focuspoints.username", properties::setUsername);
-		setPropertyIfExists(sc, "focuspoints.password", properties::setPassword);
+		setPropertyIfExists(sc, "focuspoints.token-id", properties::setTokenId);
+		setPropertyIfExists(sc, "focuspoints.token-secret", properties::setTokenSecret);
 		
 		return properties;
 	}

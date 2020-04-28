@@ -32,15 +32,15 @@ public class TokenCreator {
 	}
 
 	public ImageResizeTokenBuilder createImageResizeToken(URL url, int width, int height) {
-		String issuer = this.focusPointsConfiguration.getUsername();
-		String secret = this.focusPointsConfiguration.getPassword();
+		String issuer = this.focusPointsConfiguration.getTokenId();
+		String secret = this.focusPointsConfiguration.getTokenSecret();
 
 		return new ImageResizeTokenBuilder(issuer, secret, url, width, height);
 	}
 
 	public ImageTransformationTokenBuilder createImageTransformationToken(URL url, int width, int height) {
-		String issuer = this.focusPointsConfiguration.getUsername();
-		String secret = this.focusPointsConfiguration.getPassword();
+		String issuer = this.focusPointsConfiguration.getTokenId();
+		String secret = this.focusPointsConfiguration.getTokenSecret();
 
 		return new ImageTransformationTokenBuilder(issuer, secret, url, width, height);
 	}

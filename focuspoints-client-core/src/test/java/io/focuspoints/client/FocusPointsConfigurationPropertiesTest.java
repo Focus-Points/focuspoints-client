@@ -13,24 +13,25 @@ public class FocusPointsConfigurationPropertiesTest {
 	public void testDefaults() {
 		FocusPointsConfigurationProperties focusPointsConfigurationProperties = this.createDefaultConfiguration();
 
-		assertNull(focusPointsConfigurationProperties.getUrl());
+		assertEquals(FocusPointsConfigurationProperties.URL_DEFAULT, focusPointsConfigurationProperties.getUrl());
 		assertEquals(
 				FocusPointsConfigurationProperties.TOKEN_REQUEST_PARAMETER_NAME_DEFAULT,
 				focusPointsConfigurationProperties.getTokenRequestParameterName()
 		);
-		assertNull(focusPointsConfigurationProperties.getUsername());
-		assertNull(focusPointsConfigurationProperties.getPassword());
+		assertNull(focusPointsConfigurationProperties.getTokenId());
+		assertNull(focusPointsConfigurationProperties.getTokenSecret());
 	}
 
 	@Test
-	public void testValidateWithNullUrl() {
+	public void testValidate_NullUrl() {
 		FocusPointsConfigurationProperties focusPointsConfigurationProperties = this.createEmptyConfiguration();
+		focusPointsConfigurationProperties.setUrl(null);
 
 		assertThrows(NullPointerException.class, () -> focusPointsConfigurationProperties.validate());
 	}
 
 	@Test
-	public void testValidateWithEmptyUrl() {
+	public void testValidate_EmptyUrl() {
 		FocusPointsConfigurationProperties focusPointsConfigurationProperties = this.createEmptyConfiguration();
 		focusPointsConfigurationProperties.setUrl(StringUtils.EMPTY);
 
@@ -38,7 +39,7 @@ public class FocusPointsConfigurationPropertiesTest {
 	}
 
 	@Test
-	public void testValidateWithNullTokenRequestParameterName() {
+	public void testValidate_NullTokenRequestParameterName() {
 		FocusPointsConfigurationProperties focusPointsConfigurationProperties = this.createEmptyConfiguration();
 		this.setValidUrl(focusPointsConfigurationProperties);
 
@@ -46,7 +47,7 @@ public class FocusPointsConfigurationPropertiesTest {
 	}
 
 	@Test
-	public void testValidateWithEmptyTokenRequestParameterName() {
+	public void testValidate_EmptyTokenRequestParameterName() {
 		FocusPointsConfigurationProperties focusPointsConfigurationProperties = this.createEmptyConfiguration();
 		this.setValidUrl(focusPointsConfigurationProperties);
 		focusPointsConfigurationProperties.setTokenRequestParameterName(StringUtils.EMPTY);
@@ -55,7 +56,7 @@ public class FocusPointsConfigurationPropertiesTest {
 	}
 
 	@Test
-	public void testValidateWithNullUsername() {
+	public void testValidate_NullTokenId() {
 		FocusPointsConfigurationProperties focusPointsConfigurationProperties = this.createEmptyConfiguration();
 		this.setValidUrl(focusPointsConfigurationProperties);
 		this.setValidTokenRequestParameterName(focusPointsConfigurationProperties);
@@ -64,32 +65,32 @@ public class FocusPointsConfigurationPropertiesTest {
 	}
 
 	@Test
-	public void testValidateWithEmptyUsername() {
+	public void testValidate_EmptyTokenId() {
 		FocusPointsConfigurationProperties focusPointsConfigurationProperties = this.createEmptyConfiguration();
 		this.setValidUrl(focusPointsConfigurationProperties);
 		this.setValidTokenRequestParameterName(focusPointsConfigurationProperties);
-		focusPointsConfigurationProperties.setUsername(StringUtils.EMPTY);
+		focusPointsConfigurationProperties.setTokenId(StringUtils.EMPTY);
 
 		assertThrows(IllegalArgumentException.class, () -> focusPointsConfigurationProperties.validate());
 	}
 
 	@Test
-	public void testValidateWithNullPassword() {
+	public void testValidate_NullTokenSecret() {
 		FocusPointsConfigurationProperties focusPointsConfigurationProperties = this.createEmptyConfiguration();
 		this.setValidUrl(focusPointsConfigurationProperties);
 		this.setValidTokenRequestParameterName(focusPointsConfigurationProperties);
-		this.setValidUsername(focusPointsConfigurationProperties);
+		this.setValidTokenId(focusPointsConfigurationProperties);
 
 		assertThrows(NullPointerException.class, () -> focusPointsConfigurationProperties.validate());
 	}
 
 	@Test
-	public void testValidateWithEmptyPassword() {
+	public void testValidate_EmptyTokenSecret() {
 		FocusPointsConfigurationProperties focusPointsConfigurationProperties = this.createEmptyConfiguration();
 		this.setValidUrl(focusPointsConfigurationProperties);
 		this.setValidTokenRequestParameterName(focusPointsConfigurationProperties);
-		this.setValidUsername(focusPointsConfigurationProperties);
-		focusPointsConfigurationProperties.setPassword(StringUtils.EMPTY);
+		this.setValidTokenId(focusPointsConfigurationProperties);
+		focusPointsConfigurationProperties.setTokenSecret(StringUtils.EMPTY);
 
 		assertThrows(IllegalArgumentException.class, () -> focusPointsConfigurationProperties.validate());
 	}
@@ -99,8 +100,8 @@ public class FocusPointsConfigurationPropertiesTest {
 		FocusPointsConfigurationProperties focusPointsConfigurationProperties = this.createEmptyConfiguration();
 		this.setValidUrl(focusPointsConfigurationProperties);
 		this.setValidTokenRequestParameterName(focusPointsConfigurationProperties);
-		this.setValidUsername(focusPointsConfigurationProperties);
-		this.setValidPassword(focusPointsConfigurationProperties);
+		this.setValidTokenId(focusPointsConfigurationProperties);
+		this.setValidTokenSecret(focusPointsConfigurationProperties);
 		focusPointsConfigurationProperties.validate();
 	}
 
@@ -112,8 +113,8 @@ public class FocusPointsConfigurationPropertiesTest {
 		FocusPointsConfigurationProperties focusPointsConfigurationProperties = this.createDefaultConfiguration();
 		focusPointsConfigurationProperties.setUrl(null);
 		focusPointsConfigurationProperties.setTokenRequestParameterName(null);
-		focusPointsConfigurationProperties.setUsername(null);
-		focusPointsConfigurationProperties.setPassword(null);
+		focusPointsConfigurationProperties.setTokenId(null);
+		focusPointsConfigurationProperties.setTokenSecret(null);
 		return focusPointsConfigurationProperties;
 	}
 
@@ -127,11 +128,11 @@ public class FocusPointsConfigurationPropertiesTest {
 				.setTokenRequestParameterName(FocusPointsConfigurationProperties.TOKEN_REQUEST_PARAMETER_NAME_DEFAULT);
 	}
 
-	private void setValidUsername(FocusPointsConfigurationProperties focusPointsConfigurationProperties) {
-		focusPointsConfigurationProperties.setUsername("testUsername");
+	private void setValidTokenId(FocusPointsConfigurationProperties focusPointsConfigurationProperties) {
+		focusPointsConfigurationProperties.setTokenId("testTokenId");
 	}
 
-	private void setValidPassword(FocusPointsConfigurationProperties focusPointsConfigurationProperties) {
-		focusPointsConfigurationProperties.setPassword("testPassword");
+	private void setValidTokenSecret(FocusPointsConfigurationProperties focusPointsConfigurationProperties) {
+		focusPointsConfigurationProperties.setTokenSecret("testTokenSecret");
 	}
 }

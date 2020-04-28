@@ -14,8 +14,8 @@ public class TokenCreatorTest {
 
 	private FocusPointsConfigurationProperties focusPointsConfigurationProperties;
 
-	private String username = "testUsername";
-	private String password = "testPassword";
+	private String tokenId = "testTokenId";
+	private String tokenSecret = "testTokenSecret";
 
 	private URL url;
 
@@ -25,8 +25,8 @@ public class TokenCreatorTest {
 	public void setUp() throws Exception {
 		this.focusPointsConfigurationProperties = spy(new FocusPointsConfigurationProperties());
 
-		this.focusPointsConfigurationProperties.setUsername(this.username);
-		this.focusPointsConfigurationProperties.setPassword(this.password);
+		this.focusPointsConfigurationProperties.setTokenId(this.tokenId);
+		this.focusPointsConfigurationProperties.setTokenSecret(this.tokenSecret);
 
 		this.url = new URL("http://www.domain.ect");
 
@@ -109,7 +109,7 @@ public class TokenCreatorTest {
 	}
 
 	private void verifyConfigurationPropertiesCalled() {
-		verify(this.focusPointsConfigurationProperties).getUsername();
-		verify(this.focusPointsConfigurationProperties).getPassword();
+		verify(this.focusPointsConfigurationProperties).getTokenId();
+		verify(this.focusPointsConfigurationProperties).getTokenSecret();
 	}
 }
