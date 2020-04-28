@@ -9,7 +9,7 @@ Add the following dependency to your project
 ```xml
 <dependency>
 	<groupId>io.focuspoints</groupId>
-	<artifactId>focuspoints-client</artifactId>
+	<artifactId>focuspoints-client-core</artifactId>
 	<version>1.0.0</version>
 </dependency>
 ```
