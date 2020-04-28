@@ -109,7 +109,7 @@ Add the following dependency to your projetc
 
 This will add a taglib to your project containing a tld with uri `http://www.focuspoints.io/tags`. The tld defines two tags used for image transformation and image resizing.
 
-## The image transformation tag
+### The image transformation tag
 
 The image transformation tag generates a URL containing the correct parameters for transforming an image using the desired parameters. The images created by the transformation operation always matches the desired with and height. When it is required to crop certain parts of the image the focus point coordinate is used to determin which part of the image must not be removed.
 
@@ -124,7 +124,7 @@ The image transformation tag generates a URL containing the correct parameters f
 | var         | false    | The string to use when binding the result to the page, request, session or application scope. If not specified the result gets outputted to the writer (i.e. typically directly to the JSP) |
 | scope       | false    | The scope to use when exporting the result to a variable. This attribute is only used when **var** is also set. Possible values are **page**, **request**, **session** and **application**. When no value is specified this defaults to the **page** scope |
 
-### Examples
+#### Examples
 ```xml
 <%-- Import imageservice taglib --%>
 <%@ taglib prefix="focuspoints" uri="http://www.focuspoints.io/tags" %>
@@ -136,7 +136,7 @@ The image transformation tag generates a URL containing the correct parameters f
 <focuspoints:transform var="imageTransformed1280x360" url="https://path/to/my/image" filename="my-image.jpg" width="1280" height="360" focusPointX="0.6" focusPointY="-0.35" />
 ```
 
-## The image resize tag
+### The image resize tag
 
 The image resize tag generates a URL containing the correct parameters for resizing an image using the desired parameters. Where the image transformation tag can crop certain parts of an image this is not always desired (e.g. when displaying a company logo). The resize operation makes sure the image fits within the desired dimensions but only fits the longest side of the image. The shortest side could therefor be smaller than the provided with or height.
 
@@ -149,7 +149,7 @@ The image resize tag generates a URL containing the correct parameters for resiz
 | var       | false    | The string to use when binding the result to the page, request, session or application scope. If not specified the result gets outputted to the writer (i.e. typically directly to the JSP) |
 | scope     | false    | The scope to use when exporting the result to a variable. This attribute is only used when **var** is also set. Possible values are **page**, **request**, **session** and **application**. When no value is specified this defaults to the **page** scope |
 
-### Examples
+#### Examples
 ```xml
 <%-- Import imageservice taglib --%>
 <%@ taglib prefix="focuspoints" uri="http://www.focuspoints.io/tags" %>
@@ -189,7 +189,38 @@ public LayoutDialect focusPointsDialect() {
 }
 ```
 
-This will add the `#focuspoints` object similar to other functions in the StandardDialect.
+This will add the `#focuspoints` object with the following functions
+
+```java
+${#focuspoints.transform(url, filename, width, height)}
+${#focuspoints.transform(url, filename, width, height, focusPointX, focusPointY)}
+
+${#focuspoints.resize(url, filename, width, height)}
+```
+
+### The transformation operation
+
+The transformation operation generates a URL containing the correct parameters for transforming an image using the desired parameters. The images created by the transformation operation always matches the desired with and height. When it is required to crop certain parts of the image the focus point coordinate is used to determin which part of the image must not be removed.
+
+| Parameter   | Required | Description |
+|-------------|----------|-------------|
+| url         | true     | An absolute URL of the image that is used. |
+| filename    | false    | The filename of the image. |
+| width       | true     | The desired with of the generated image variant in pixels. Must be a positive `Integer` value |
+| height      | true     | The desired height of the generated image variant in pixels. Must be a positive `Integer` value |
+| focusPointX | false    | The focus point coordinate for the x-axis. Must be a `Double` value between -1 and 1. |
+| focusPointY | false    | The focus point coordinate for the y-axis. Must be a `Double` value between -1 and 1. |
+
+### The resize operation
+
+The resize operation generates a URL containing the correct parameters for resizing an image using the desired parameters. Where the image transformation tag can crop certain parts of an image this is not always desired (e.g. when displaying a company logo). The resize operation makes sure the image fits within the desired dimensions but only fits the longest side of the image. The shortest side could therefor be smaller than the provided with or height.
+
+| Attribute | Required | Description |
+|-----------|----------|-------------|
+| url       | true     | An absolute URL of the image that is used. |
+| filename  | false    | The filename of the image. |
+| width     | true     | The desired with of the generated image variant in pixels. Must be a positive `Integer` value |
+| height    | true     | The desired height of the generated image variant in pixels. Must be a positive `Integer` value |
 
 # Serving images from your own domain
 When using FocusPoints the domain your images are services from will be `images.focuspoints.io`. If this is undesirable behavior it is possible to serve the images from your own domain by using a proxy. In order to so use the following steps:
