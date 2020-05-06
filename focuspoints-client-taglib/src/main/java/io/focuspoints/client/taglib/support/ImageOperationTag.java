@@ -1,5 +1,6 @@
 package io.focuspoints.client.taglib.support;
 
+import io.focuspoints.client.FocusPointsConfigurationProperties;
 import io.focuspoints.client.UrlCreator;
 import io.focuspoints.client.util.TagUtils;
 import io.focuspoints.client.util.UrlUtils;
@@ -40,6 +41,23 @@ public abstract class ImageOperationTag extends TagSupport {
 
 		return EVAL_PAGE;
 	}
+	
+	protected FocusPointsConfigurationProperties getConfiguration() {
+		Object obj = this.pageContext.getAttribute(
+				FocusPointsConfigurationProperties.class.getName(), PageContext.APPLICATION_SCOPE);
+		
+		if(obj == null) {
+			throw new IllegalStateException("No configuration found in servlet context for attribute " +
+					FocusPointsConfigurationProperties.class.getName());
+		}
+		
+		if(!FocusPointsConfigurationProperties.class.isAssignableFrom(obj.getClass())) {
+			throw new IllegalStateException("Incompatible configuration type found in servlet context for attribte " +
+					FocusPointsConfigurationProperties.class.getName() + ": " + obj.getClass().getName());
+		}
+		
+		return (FocusPointsConfigurationProperties) obj; 
+	}
 
 	protected URL getImageUrl() {
 		try {
@@ -50,6 +68,10 @@ public abstract class ImageOperationTag extends TagSupport {
 	}
 
 	protected String getValue() throws JspException {
+		if(!this.getConfiguration().isEnabled()) {
+			return this.getImageUrl().toExternalForm();
+		}
+		
 		String token = this.createToken();
 
 		String imageOperationUrl =
