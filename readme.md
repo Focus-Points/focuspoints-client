@@ -52,8 +52,8 @@ Add the following dependency to your project
 
 ```xml
 <dependency>
-	<groupId>nl.tfe.focuspoints</groupId>
-	<artifactId>tfe-focuspoints-client-core-spring</artifactId>
+	<groupId>io.focuspoints</groupId>
+	<artifactId>focuspoints-client-core-spring</artifactId>
 	<version>1.0.0</version>
 </dependency>
 ```
@@ -77,7 +77,7 @@ Add the following dependency to your projetc
 
 ```xml
 <dependency>
-	<groupId>nl.tfe.focuspoints</groupId>
+	<groupId>io.focuspoints</groupId>
 	<artifactId>focuspoints-client-core-spring-boot-starter</artifactId>
 	<version>1.0.0</version>
 </dependency>
@@ -101,7 +101,7 @@ Add the following dependency to your projetc
 
 ```xml
 <dependency>
-	<groupId>nl.tfe.focuspoints</groupId>
+	<groupId>io.focuspoints</groupId>
 	<artifactId>focuspoints-client-taglib</artifactId>
 	<version>1.0.0</version>
 </dependency>
@@ -167,7 +167,7 @@ Add the following dependency to your projetc
 
 ```xml
 <dependency>
-	<groupId>nl.tfe.focuspoints</groupId>
+	<groupId>io.focuspoints</groupId>
 	<artifactId>focuspoints-client-thymeleaf</artifactId>
 	<version>1.0.0</version>
 </dependency>
