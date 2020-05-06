@@ -10,6 +10,8 @@ public class FocusPointsConfigurationProperties {
 	public static final String URL_DEFAULT = "https://image.focuspoints.io";
 	public static final String TOKEN_REQUEST_PARAMETER_NAME_DEFAULT = "_jwt";
 
+	private boolean enabled = true;
+	
 	private String url = URL_DEFAULT;
 	private String tokenRequestParameterName = TOKEN_REQUEST_PARAMETER_NAME_DEFAULT;
 

@@ -52,8 +52,8 @@ Add the following dependency to your project
 
 ```xml
 <dependency>
-	<groupId>nl.tfe.focuspoints</groupId>
-	<artifactId>tfe-focuspoints-client-core-spring</artifactId>
+	<groupId>io.focuspoints</groupId>
+	<artifactId>focuspoints-client-core-spring</artifactId>
 	<version>1.0.0</version>
 </dependency>
 ```
@@ -77,7 +77,7 @@ Add the following dependency to your projetc
 
 ```xml
 <dependency>
-	<groupId>nl.tfe.focuspoints</groupId>
+	<groupId>io.focuspoints</groupId>
 	<artifactId>focuspoints-client-core-spring-boot-starter</artifactId>
 	<version>1.0.0</version>
 </dependency>
@@ -93,6 +93,18 @@ Make sure the following properties are present in your environment configuration
 | focuspoints.token-id     | Your FocusPoints API Key ID              |
 | focuspoints.token-secret | Your FocusPoints API Key Secret          |
 
+## Configuration Properties
+
+The following configuration properties are supported.
+
+| Name                                     | Required | Default Value                | Description                                                                        |
+|------------------------------------------|----------|------------------------------|------------------------------------------------------------------------------------|
+| focuspoints.token-id                     | True     |                              | Your FocusPoints API Key ID                                                        |
+| focuspoints.token-secret                 | True     |                              | Your FocusPoints API Key Secret                                                    |
+| focuspoints.enabled                      | False    | True                         | Enables the use of focuspoints. When disabled, the original image URL will be used |
+| focuspoints.url                          | False    | https://image.focuspoints.io | The focuspoints server endpoint                                                    |
+| focuspoints.token-request-parameter-name | False    | _jwt                         | The name of the request parameter containing the token                             |
+
 # Using FocusPoints in your frontend
 
 ## JSP and Freemarker
@@ -101,7 +113,7 @@ Add the following dependency to your projetc
 
 ```xml
 <dependency>
-	<groupId>nl.tfe.focuspoints</groupId>
+	<groupId>io.focuspoints</groupId>
 	<artifactId>focuspoints-client-taglib</artifactId>
 	<version>1.0.0</version>
 </dependency>
@@ -167,7 +179,7 @@ Add the following dependency to your projetc
 
 ```xml
 <dependency>
-	<groupId>nl.tfe.focuspoints</groupId>
+	<groupId>io.focuspoints</groupId>
 	<artifactId>focuspoints-client-thymeleaf</artifactId>
 	<version>1.0.0</version>
 </dependency>
