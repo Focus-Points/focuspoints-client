@@ -10,7 +10,7 @@ Add the following dependency to your project
 <dependency>
 	<groupId>io.focuspoints</groupId>
 	<artifactId>focuspoints-client-core</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.1</version>
 </dependency>
 ```
 
@@ -35,7 +35,7 @@ Add the following dependency to your project
 <dependency>
 	<groupId>io.focuspoints</groupId>
 	<artifactId>focuspoints-client-core-servlet</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.1</version>
 </dependency>
 ```
 
@@ -54,7 +54,7 @@ Add the following dependency to your project
 <dependency>
 	<groupId>io.focuspoints</groupId>
 	<artifactId>focuspoints-client-core-spring</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.1</version>
 </dependency>
 ```
 
@@ -79,7 +79,7 @@ Add the following dependency to your projetc
 <dependency>
 	<groupId>io.focuspoints</groupId>
 	<artifactId>focuspoints-client-core-spring-boot-starter</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.1</version>
 </dependency>
 ```
 
@@ -115,7 +115,7 @@ Add the following dependency to your projetc
 <dependency>
 	<groupId>io.focuspoints</groupId>
 	<artifactId>focuspoints-client-taglib</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.1</version>
 </dependency>
 ```
 
@@ -181,7 +181,7 @@ Add the following dependency to your projetc
 <dependency>
 	<groupId>io.focuspoints</groupId>
 	<artifactId>focuspoints-client-thymeleaf</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.1</version>
 </dependency>
 ```
 
