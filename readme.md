@@ -93,6 +93,18 @@ Make sure the following properties are present in your environment configuration
 | focuspoints.token-id     | Your FocusPoints API Key ID              |
 | focuspoints.token-secret | Your FocusPoints API Key Secret          |
 
+## Configuration Properties
+
+The following configuration properties are supported.
+
+| Name                                     | Required | Default Value                | Description                                                                        |
+|------------------------------------------|----------|------------------------------|------------------------------------------------------------------------------------|
+| focuspoints.token-id                     | True     |                              | Your FocusPoints API Key ID                                                        |
+| focuspoints.token-secret                 | True     |                              | Your FocusPoints API Key Secret                                                    |
+| focuspoints.enabled                      | False    | True                         | Enables the use of focuspoints. When disabled, the original image URL will be used |
+| focuspoints.url                          | False    | https://image.focuspoints.io | The focuspoints server endpoint                                                    |
+| focuspoints.token-request-parameter-name | False    | _jwt                         | The name of the request parameter containing the token                             |
+
 # Using FocusPoints in your frontend
 
 ## JSP and Freemarker
