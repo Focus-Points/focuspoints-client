@@ -58,7 +58,7 @@
 		<!-- Replace javax dependencies with Jakarta equivalents -->
 		<jakarta.servlet-api.version>6.0.0</jakarta.servlet-api.version>
 		<jakarta.annotation.version>2.1.1</jakarta.annotation.version>
-		<jsp-api.version>3.0.0</jsp-api.version>  <!-- Jakarta JSP API -->
+		<jsp-api.version>4.0.0</jsp-api.version>  <!-- Jakarta JSP API -->
 
 		<!-- Thymeleaf with Spring 6 support -->
 		<thymeleaf.version>3.1.1.RELEASE</thymeleaf.version>
