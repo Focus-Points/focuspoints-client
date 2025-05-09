@@ -7,9 +7,9 @@ import io.focuspoints.client.util.UrlUtils;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
-import javax.servlet.jsp.JspException;
-import javax.servlet.jsp.PageContext;
-import javax.servlet.jsp.tagext.TagSupport;
+import jakarta.servlet.jsp.JspException;
+import jakarta.servlet.jsp.PageContext;
+import jakarta.servlet.jsp.tagext.TagSupport;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
@@ -67,7 +67,7 @@ public abstract class ImageOperationTag extends TagSupport {
 		}
 	}
 
-	protected String getValue() throws JspException {
+	protected String getValue() {
 		if(!this.getConfiguration().isEnabled()) {
 			return this.getImageUrl().toExternalForm();
 		}

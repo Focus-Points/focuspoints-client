@@ -4,7 +4,7 @@
 	
 	<groupId>io.focuspoints</groupId>
 	<artifactId>focuspoints-client</artifactId>
-	<version>1.0.1</version>
+	<version>2.0.0</version>
 	
 	<packaging>pom</packaging>
 	
@@ -35,41 +35,53 @@
 			<organizationUrl>https://tfe.nl/</organizationUrl>
 		</developer>
 	</developers>
-	
+
 	<properties>
-		<java.version>1.8</java.version>
-		
+		<!-- Update to Java 17 -->
+		<java.version>17</java.version>
+
 		<maven.compiler.source>${java.version}</maven.compiler.source>
 		<maven.compiler.target>${java.version}</maven.compiler.target>
-		
-		<project.build.sourceEncoding>utf-8</project.build.sourceEncoding>
-		<project.reporting.outputEncoding>utf-8</project.reporting.outputEncoding>
-		
-		<commons-lang3.version>3.10</commons-lang3.version>
-		<java-jwt.version>3.10.2</java-jwt.version>
+
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+		<!-- Update dependencies to recent versions -->
+		<commons-lang3.version>3.13.0</commons-lang3.version>
+		<java-jwt.version>4.4.0</java-jwt.version>
 		<urlbuilder.version>2.0.9</urlbuilder.version>
-		<spring.version>5.2.4.RELEASE</spring.version>
-		<spring-boot.version>2.2.5.RELEASE</spring-boot.version>
-		<javax.servlet-api.version>4.0.1</javax.servlet-api.version>
-		<jsp-api.version>2.3.3</jsp-api.version>
-		<thymeleaf.version>3.0.11.RELEASE</thymeleaf.version>
-		<lombok.version>1.18.12</lombok.version>
-		
-		<junit-platform.version>1.5.2</junit-platform.version>
-		<junit.version>5.6.0</junit.version>
-		<mockito.version>3.3.3</mockito.version>
-		
-		<jacoco-maven-plugin.version>0.8.5</jacoco-maven-plugin.version>
-		<maven-deploy-plugin.version>2.8.2</maven-deploy-plugin.version>
-		<maven-release-plugin.version>2.5.3</maven-release-plugin.version>
-		<maven-scm.version>1.11.2</maven-scm.version>
-		<maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
+
+		<!-- Update to Spring Framework 6.x and Spring Boot 3.x -->
+		<spring.version>6.1.8</spring.version>
+		<spring-boot.version>3.3.0</spring-boot.version>
+
+		<!-- Replace javax dependencies with Jakarta equivalents -->
+		<jakarta.servlet-api.version>6.0.0</jakarta.servlet-api.version>
+		<jakarta.annotation.version>2.1.1</jakarta.annotation.version>
+		<jsp-api.version>4.0.0</jsp-api.version>  <!-- Jakarta JSP API -->
+
+		<!-- Thymeleaf with Spring 6 support -->
+		<thymeleaf.version>3.1.1.RELEASE</thymeleaf.version>
+
+		<!-- Lombok and test dependencies -->
+		<lombok.version>1.18.30</lombok.version>
+
+		<junit-platform.version>1.9.2</junit-platform.version>
+		<junit.version>5.9.2</junit.version>
+		<mockito.version>5.4.0</mockito.version>
+
+		<!-- Plugins updates -->
+		<jacoco-maven-plugin.version>0.8.10</jacoco-maven-plugin.version>
+		<maven-deploy-plugin.version>3.0.0-M1</maven-deploy-plugin.version>
+		<maven-release-plugin.version>3.0.0</maven-release-plugin.version>
+		<maven-scm.version>1.12.0</maven-scm.version>
+		<maven-surefire-plugin.version>3.1.2</maven-surefire-plugin.version>
 		<maven-source-plugin.version>3.2.1</maven-source-plugin.version>
-		<maven-javadoc-plugin.version>3.2.0</maven-javadoc-plugin.version>
-		<maven-gpg-plugin.version>1.6</maven-gpg-plugin.version>
-		<nexus-staging-maven-plugin.version>1.6.8</nexus-staging-maven-plugin.version>
+		<maven-javadoc-plugin.version>3.5.0</maven-javadoc-plugin.version>
+		<maven-gpg-plugin.version>3.0.1</maven-gpg-plugin.version>
+		<nexus-staging-maven-plugin.version>1.6.13</nexus-staging-maven-plugin.version>
 	</properties>
-	
+
 	<modules>
 		<module>focuspoints-client-core</module>
 		<module>focuspoints-client-core-spring</module>
@@ -126,15 +138,15 @@
 			</dependency>
 			
 			<dependency>
-				<groupId>javax.servlet</groupId>
-				<artifactId>javax.servlet-api</artifactId>
-				<version>${javax.servlet-api.version}</version>
+				<groupId>jakarta.servlet</groupId>
+				<artifactId>jakarta.servlet-api</artifactId>
+				<version>${jakarta.servlet-api.version}</version>
 				<scope>provided</scope>
 			</dependency>
 			
 			<dependency>
-				<groupId>javax.servlet.jsp</groupId>
-				<artifactId>javax.servlet.jsp-api</artifactId>
+				<groupId>jakarta.servlet.jsp</groupId>
+				<artifactId>jakarta.servlet.jsp-api</artifactId>
 				<version>${jsp-api.version}</version>
 				<scope>provided</scope>
 			</dependency>
@@ -170,6 +182,11 @@
 				<artifactId>mockito-junit-jupiter</artifactId>
 				<version>${mockito.version}</version>
 				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>jakarta.annotation</groupId>
+				<artifactId>jakarta.annotation-api</artifactId>
+				<version>${jakarta.annotation.version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>

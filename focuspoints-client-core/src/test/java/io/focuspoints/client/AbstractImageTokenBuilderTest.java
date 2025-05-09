@@ -44,21 +44,21 @@ public class AbstractImageTokenBuilderTest {
 				() -> new TestTokenBuilder(this.issuer, "")
 		);
     }
-    
+
     @Test
     public void testBuild() {
         String expectedToken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJ0ZXN0SXNzdWVyIiwiYWN0aW9uIjoidGVzdEFjdGlvbiJ9.qME7SDyRb3U-VxktQjK8E63V_eXcs4-KVMJmeCo9NP2I0LJZzGcKzYPXGLsKNLqemQ9Wu5h6iW_Qx6e9upxjEw";
-        
+
         TestTokenBuilder builder = spy(new TestTokenBuilder(this.issuer, this.secret));
-        
+
         String token = builder.build();
-        
+
         verify(builder).getAction();
         verify(builder).buildInternal(notNull());
-        
+
         assertEquals(expectedToken, token);
     }
-    
+
     
     private static class TestTokenBuilder extends AbstractImageTokenBuilder<TestTokenBuilder> {
 

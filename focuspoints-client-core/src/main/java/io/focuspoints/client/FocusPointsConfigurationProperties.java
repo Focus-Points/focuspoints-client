@@ -1,6 +1,7 @@
 package io.focuspoints.client;
 
-import javax.annotation.PostConstruct;
+
+import jakarta.annotation.PostConstruct;
 import lombok.Data;
 import org.apache.commons.lang3.Validate;
 
